@@ -517,7 +517,13 @@ export interface ApiFitnessClassFitnessClass
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
     difficulty: Schema.Attribute.Enumeration<['easy', 'moderate', 'hard']>;
-    duration: Schema.Attribute.Integer;
+    duration: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

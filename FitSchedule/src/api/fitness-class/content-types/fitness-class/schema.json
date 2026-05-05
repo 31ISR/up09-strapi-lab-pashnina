@@ -21,7 +21,8 @@
       "type": "datetime"
     },
     "duration": {
-      "type": "integer"
+      "type": "integer",
+      "min": 0
     },
     "maxCapacity": {
       "type": "integer"
